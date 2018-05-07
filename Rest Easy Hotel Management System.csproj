@@ -1,0 +1,341 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{315DD20F-50A0-45CD-BA9E-E819873B2459}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Rest_Easy_Hotel_Management_System</RootNamespace>
+    <AssemblyName>Rest Easy Hotel Management System</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows" />
+    <Reference Include="System.Windows.Controls.Ribbon" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Windows.Forms.DataVisualization.Design" />
+    <Reference Include="System.Windows.Input.Manipulations" />
+    <Reference Include="System.Windows.Presentation" />
+    <Reference Include="System.Workflow.Activities" />
+    <Reference Include="System.Workflow.ComponentModel" />
+    <Reference Include="System.Workflow.Runtime" />
+    <Reference Include="System.WorkflowServices" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Serialization" />
+    <Reference Include="UIAutomationClient" />
+    <Reference Include="UIAutomationClientsideProviders" />
+    <Reference Include="UIAutomationProvider" />
+    <Reference Include="UIAutomationTypes" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+    <Reference Include="WPFVisifire.Charts">
+      <HintPath>..\..\..\..\Downloads\wpf_visifire_v5.1.7-0_trial\Binaries\.net 4.0\WPFVisifire.Charts.dll</HintPath>
+    </Reference>
+    <Reference Include="WPFVisifire.Gauges">
+      <HintPath>..\..\..\..\Downloads\wpf_visifire_v5.1.7-0_trial\Binaries\.net 4.0\WPFVisifire.Gauges.dll</HintPath>
+    </Reference>
+    <Reference Include="XamlBuildTask" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data Access layer\BookingDB.cs" />
+    <Compile Include="Data Access layer\DB.cs" />
+    <Compile Include="Data Access layer\GuestDB.cs" />
+    <Compile Include="Data Access layer\PaymentDB.cs" />
+    <Compile Include="Data Access layer\ReceptionistDB.cs" />
+    <Compile Include="Data Access layer\RoomRateDB.cs" />
+    <Compile Include="Domain Layer\Booking.cs" />
+    <Compile Include="Domain Layer\BookingController.cs" />
+    <Compile Include="Domain Layer\Guest.cs" />
+    <Compile Include="Domain Layer\GuestController.cs" />
+    <Compile Include="Domain Layer\Payment.cs" />
+    <Compile Include="Domain Layer\PaymentController.cs" />
+    <Compile Include="Domain Layer\Receptionist.cs" />
+    <Compile Include="Domain Layer\ReceptionistController.cs" />
+    <Compile Include="Domain Layer\RoomRate.cs" />
+    <Compile Include="Domain Layer\RoomRateController.cs" />
+    <Compile Include="Presentation Layer\BookingEditDeleteForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\BookingEditDeleteForm.Designer.cs">
+      <DependentUpon>BookingEditDeleteForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\BookingListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\BookingListForm.Designer.cs">
+      <DependentUpon>BookingListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\CheckAvailability.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\CheckAvailability.Designer.cs">
+      <DependentUpon>CheckAvailability.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\ConfirmationForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ConfirmationForm.Designer.cs">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\GuestListForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\GuestListForm.Designer.cs">
+      <DependentUpon>GuestListForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\GuestForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\GuestForm.Designer.cs">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\Home.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\Home.Designer.cs">
+      <DependentUpon>Home.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\LogInForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\LogInForm.Designer.cs">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\PaymentDetailsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\PaymentDetailsForm.Designer.cs">
+      <DependentUpon>PaymentDetailsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\ReportForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ReportForm.Designer.cs">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Presentation Layer\ReservationDetailsDisplayForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Presentation Layer\ReservationDetailsDisplayForm.Designer.cs">
+      <DependentUpon>ReservationDetailsDisplayForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ReservationAndGuestDatabaseDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationAndGuestDatabaseDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Domain Layer\Room.cs" />
+    <Compile Include="Domain Layer\RoomController.cs" />
+    <Compile Include="Data Access layer\RoomDB.cs" />
+    <Compile Include="ReservationAndGuestDatabaseDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationAndGuestDatabaseDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationAndGuestDatabaseDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationAndGuestDatabaseDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="ReservationAndGuestDatabaseDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReservationAndGuestDatabaseDataSet3.xsd</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Presentation Layer\BookingEditDeleteForm.resx">
+      <DependentUpon>BookingEditDeleteForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\BookingListForm.resx">
+      <DependentUpon>BookingListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\CheckAvailability.resx">
+      <DependentUpon>CheckAvailability.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ConfirmationForm.resx">
+      <DependentUpon>ConfirmationForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\GuestListForm.resx">
+      <DependentUpon>GuestListForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\GuestForm.resx">
+      <DependentUpon>GuestForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\Home.resx">
+      <DependentUpon>Home.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\LogInForm.resx">
+      <DependentUpon>LogInForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\PaymentDetailsForm.resx">
+      <DependentUpon>PaymentDetailsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ReportForm.resx">
+      <DependentUpon>ReportForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Presentation Layer\ReservationDetailsDisplayForm.resx">
+      <DependentUpon>ReservationDetailsDisplayForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="ReservationAndGuestDatabaseDataSet.xsc">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservationAndGuestDatabaseDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet.xss">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ReservationAndGuestDatabaseDataSet1.xsc">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservationAndGuestDatabaseDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet1.xss">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet2.xsc">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservationAndGuestDatabaseDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet2.xss">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet3.xsc">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ReservationAndGuestDatabaseDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="ReservationAndGuestDatabaseDataSet3.xss">
+      <DependentUpon>ReservationAndGuestDatabaseDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\blue_gradient_background.jpg" />
+    <None Include="Resources\logo.png" />
+    <None Include="Resources\White-Blank-01.jpg" />
+    <None Include="Resources\Texture-background-black-glow-hd-pictures-texture-background-for.jpg" />
+    <None Include="Resources\th4N2S3PZ71.jpg" />
+    <None Include="Resources\th4N2S3PZ7.jpg" />
+    <None Include="Resources\cool-wooden-wall-cool-twitter-backgrounds.jpg" />
+    <None Include="Resources\wpid-Cool-Game-Wallpaper-Hd-1080p-5.jpg" />
+    <None Include="Resources\VisaMasterCard.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.5">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.5 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ReservationAndGuestDatabase.mdf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ReservationAndGuestDatabase_log.ldf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <DependentUpon>ReservationAndGuestDatabase.mdf</DependentUpon>
+    </Content>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

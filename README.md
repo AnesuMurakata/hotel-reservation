@@ -1,3 +1,3 @@
 # hotel-reservation
 
-Using the github tutorial, really don't have much to say here.
+Main code is contained within the Presentation, Domain and Data Access layer folders. 
